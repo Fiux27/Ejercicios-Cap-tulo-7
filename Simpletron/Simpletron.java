@@ -19,13 +19,13 @@ public class Simpletron{
 	public void mensajeInicial ( ){
 
 		System.out.printf ("\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s %s\n%s %s\n", 
-			"*** Welcome to Simpletron! ***",
-			"*** Please enter your program one instruction ***",
-			"*** (or data word) at a time into the input   ***",
-			"*** text field. I will display the location   ***",
-			"*** number and a question mark (?). You then  ***",
-			"*** type the word for that location. Press the***",
-			"*** Done button to stop entering your program ***",
+			"*** ¡Bienvenido a Simpletron! ***",
+			"*** Por favor ingrese su programa una instrucción ***",
+			"*** (o palabra de datos) a la vez en la entrada   ***",
+			"*** campo de texto. Voy a mostrar la ubicación   ***",
+			"*** número y un signo de interrogación (?). Entonces tú  ***",
+			"*** escriba la palabra para esa ubicación. presione el ***",
+			"*** Botón Listo para dejar de ingresar a su programa ***",
 			" Loc", " Inst", "****", "*****");
 	}
 
@@ -47,8 +47,8 @@ public class Simpletron{
 			
 		} while ( instruccionEnviada != -99999 );
 		
-	        System.out.printf ("\n%s%s", "*** Program loading completed ***\n", 
-				"*** Program excecution begins  ***\n");	
+	        System.out.printf ("\n%s%s", "*** Carga del programa completada ***\n", 
+				"*** Comienza la ejecución del programa ***\n");	
 		
 		for ( int code : memoria ){
 
@@ -83,11 +83,11 @@ public class Simpletron{
 
 			case 10:
 				Scanner input = new Scanner ( System.in );
-				System.out.print ( "Please Enter a whole number (positive or negative): " );
+				System.out.print ( "Ingrese un número entero (positivo o negativo)): " );
 				memoria [ operador ] = input.nextInt ();
 				break;
 			case 11:
-				System.out.println ("The result of the operation is " + memoria [ operador] );
+				System.out.println ("El resultado de la operación es " + memoria [ operador] );
 				break;
 			case 20:
 				acumulador = memoria [ operador ];
@@ -124,7 +124,7 @@ public class Simpletron{
 				break;
 			case 43:
 				dumpTheCore ();
-				System.out.printf ("\n%s\n", "The program has ended...");
+				System.out.printf ("\n%s\n", "El programa ha terminado...");
 				System.exit ( 0 );
 				break;
 
@@ -137,9 +137,9 @@ public class Simpletron{
 
 	public void dumpTheCore ( ){
 
-		System.out.printf ("\n%30s\n%30s\t%s%4d\n%30s\t%2d\n%30s\t%2d\n%30s\t%2d\n%30s\t%2d\n\n%30s\n", "REGISTERS:", 
-				"accumulator", "+", acumulador, "instruction counter", instruccionContador, "instruction register",
-			       	instruccionContador, "operation code", codigoOp, "operand", operador, "MEMORY:" );
+		System.out.printf ("\n%30s\n%30s\t%s%4d\n%30s\t%2d\n%30s\t%2d\n%30s\t%2d\n%30s\t%2d\n\n%30s\n", "Registros:", 
+				"acumulador", "+", acumulador, "instruccion contador", instruccionContador, "instruccion registro",
+			       	instruccionContador, "codigo operacion", codigoOp, "operador", operador, "Memoria:" );
 
 		for ( int i = 0; i < 10; i++ ){
 			System.out.printf ( "%6d", i);
